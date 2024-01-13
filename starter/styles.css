@@ -15,3 +15,8 @@ div.title h1 {
 /* main.dashboard {
     background-color: rgb(247, 247, 247);
 } */
+
+div.currentWeather {
+    margin-bottom: 20px;
+    background-color: white;
+}
