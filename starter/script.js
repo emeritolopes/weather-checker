@@ -34,7 +34,13 @@ $(document).ready(function() {
         h2.append(img)
         container.append(h2)
         var temp = $("<p>")
-        temp.text("temp: " + data.main.temp)
+        temp.text("Temp: " + data.main.temp + "°C")
         container.append(temp)
+        var wind = $("<p>")
+        wind.text("Wind: " + data.wind.speed + "KPH")
+        container.append(wind)
+        var humidity = $("<p>")
+        humidity.text("Humidity: " + data.main.humidity + "%")
+        container.append(humidity)
     }
 });
