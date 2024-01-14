@@ -1,3 +1,8 @@
+var today = dayjs().format('DD/MM/YYYY');
+var latitude;
+var longitude;
+
+
 // weather API from https://openweathermap.org/
 $(document).ready(function() {
     var apiURL = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=madrid";
