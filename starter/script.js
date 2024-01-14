@@ -1,6 +1,6 @@
 var apiURL = "https://api.openweathermap.org/data/2.5/weather?units=metric&q="
 var apiKey = "4930782434657daf748cc931d47eb007";
-
+var today = dayjs().format('DD/MM/YYYY');
 // weather API from https://openweathermap.org/
 
 $(document).ready(function() {
@@ -34,13 +34,16 @@ $(document).ready(function() {
         h2.append(img)
         container.append(h2)
         var temp = $("<p>")
-        temp.text("Temp: " + data.main.temp + "°C")
+        temp.text("Temp: " + data.main.temp + " °C")
         container.append(temp)
         var wind = $("<p>")
-        wind.text("Wind: " + data.wind.speed + "KPH")
+        wind.text("Wind: " + data.wind.speed + " KPH")
         container.append(wind)
         var humidity = $("<p>")
-        humidity.text("Humidity: " + data.main.humidity + "%")
+        humidity.text("Humidity: " + data.main.humidity + " %")
         container.append(humidity)
+        
+
+      
     }
 });
