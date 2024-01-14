@@ -1,6 +1,8 @@
 var apiURL = "https://api.openweathermap.org/data/2.5/weather?units=metric&q="
 var apiKey = "4930782434657daf748cc931d47eb007";
 var today = dayjs().format('DD/MM/YYYY');
+var foreCast = $("#forescast");
+var fiveDays;
 // weather API from https://openweathermap.org/
 
 $(document).ready(function() {
@@ -47,3 +49,15 @@ $(document).ready(function() {
       
     }
 });
+// 5-days forecast cards
+
+fiveDays = [];
+        for (i=0; i<data.list.length; i+=8) {
+            fiveDays.push(data.list[i]);
+        }
+        console.log(fiveDays);
+        foreCast.html("");
+        for(j=0; j<fiveDayList.length;j++) {
+            cardsForecast(j);
+
+        }

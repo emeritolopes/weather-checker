@@ -19,3 +19,9 @@
     padding-left: 15px;
     padding-bottom: 10px;
 }
+
+.card {
+    background-color: #05235a;
+    color: white;
+    margin-top: 10px;
+}
