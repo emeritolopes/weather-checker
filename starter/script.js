@@ -46,7 +46,12 @@ $(document).ready(function() {
         humidity.text("Humidity: " + data.main.humidity + " %")
         container.append(humidity)
         
-
+        cardContent(data);
       
     }
 });
+function cardContent(data) {
+    var temp = $("<p>")
+        temp.text("Temp: " + data.main.temp + " °C")
+        container.append(temp)
+}

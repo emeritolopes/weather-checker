@@ -20,11 +20,19 @@
     padding-bottom: 10px;
 }
 
-.bg-dark {
-    background-color: black;
-}
+.days-forecast h2{
+    font-size: 1.5rem;
+    margin: 20px 0;
 
-.card:nth-child(odd) {
-    background: #52ce90;
-    color: #fff;
-  }
+}
+.weather-cards {
+    display: flex;
+    gap: 20px;
+}
+.weather-cards .card {
+    background: #6c757d;
+    list-style: none;
+    color: cornsilk;
+    padding: 18px 16px;
+    border-radius: 5px;
+}
