@@ -20,7 +20,7 @@
     padding-bottom: 10px;
 }
 
-.days-forecast h2{
+.days-forecast h3{
     font-size: 1.5rem;
     margin: 20px 0;
 
@@ -30,7 +30,7 @@
     gap: 20px;
 }
 .weather-cards .card {
-    background: #6c757d;
+    background: #6a8694;
     list-style: none;
     color: cornsilk;
     padding: 18px 16px;
