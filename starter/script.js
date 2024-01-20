@@ -4,7 +4,7 @@ var apiForecast = "https://api.openweathermap.org/data/2.5/forecast?&appid="
 var apiKey = "805e77120e748a27c412fd3be8eba82a";
 var today = dayjs().format('DD/MM/YYYY');
 var foreCast = $("#forescast");
-var fiveDays;
+var fiveDaysList;
 var mostRecent;
 // weather API from https://openweathermap.org/
 
@@ -46,7 +46,7 @@ $(document).ready(function() {
       })}
     
 // display current weather
-    function currentWeather(current, city, data) {
+    function currentWeather(current, city) {
         var date = dayjs().format('D/M/YYYY');
   // Store response data from our request in variables
         var tempC = current.main.temp;
@@ -84,7 +84,12 @@ humidityEl.attr('class', 'card-text');
 
   todayContainer.html('');
   todayContainer.append(card);
+  card.append(cardBody);
 
+  
+    forecast.append(card);
+
+       
         
         
 
@@ -108,25 +113,37 @@ function currentWeather(forecast,container) {
     const data = forecast[i];
     var img = $("<img>")
     img.attr("src","http://openweathermap.org/img/w/" + data.weather[0].icon + ".png")
-    
-    var h2 = $("<p>")
-    h2.text(data.name)
-    container.append(h2)
+    cardsForecast();
+    fiveDaysList =[];
+    // var h2 = $("<p>")
+    // h2.text(data.name)
+    // container.append(h2)
 
-    var temp = $("<p>")
-    temp.text("Temp: " + current.main.temp + " °C")
-    container.append(temp)
+    // var temp = $("<p>")
+    // temp.text("Temp: " + current.main.temp + " °C")
+    // container.append(temp)
 
-    var wind = $("<p>")
-    wind.text("Wind: " + data.wind.speed + " KPH")
-    container.append(wind)
+    // var wind = $("<p>")
+    // wind.text("Wind: " + data.wind.speed + " KPH")
+    // container.append(wind)
 
-    var humidity = $("<p>")
-    humidity.text("Humidity: " + data.main.humidity + " %")
-    container.append(humidity)
+    // var humidity = $("<p>")
+    // humidity.text("Humidity: " + data.main.humidity + " %")
+    // container.append(humidity)
    }
     
-    
+    function cardsForecast(el) {
+        var card = $('<div class="card mx-auto"></div>');
+        var cardBody = $("<div>").addClass('card-body');
+        var date = $('<h4>').text(dayjs().add(el, "day").format("DD/MM/YYYY"));
+        var temperature = $("<p>").text("Temperature: " + (fiveDaysList[el].main.temp - 273.15).toFixed(1) + "°C");
+        var icon =$("<img>").attr("src", "https://openweathermap.org/img/wn/" + fiveDaysList[el].weather[0].icon + "@2x.png")
+        var humidity = $("<p>").text("Humidity: " + fiveDaysList[el].main.humidity + "%");
+        var wind = $("<p>").text("Wind speed: " + fiveDaysList[el].wind.speed + "m/s");
+        cardBody.append(date, icon, temperature, humidity, wind);
+        card.append(cardBody);
+        forecast.append(card);
+    }
     
   
 }
