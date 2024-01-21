@@ -4,35 +4,9 @@
    
 }
 
-#history {
-    border-top: solid 2px rgb(211, 21, 21);
-    padding-top: 5px;
-}
-
-
-#five-day-title {
-    padding-top: 20px;
-}
-
 #today {
     border: solid 1px black;
     padding-left: 15px;
     padding-bottom: 10px;
 }
 
-.days-forecast h3{
-    font-size: 1.5rem;
-    margin: 20px 0;
-
-}
-.weather-cards {
-    display: flex;
-    gap: 20px;
-}
-.weather-cards .card {
-    background: #6a8694;
-    list-style: none;
-    color: cornsilk;
-    padding: 18px 16px;
-    border-radius: 5px;
-}
